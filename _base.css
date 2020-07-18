@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,900&family=Spectral+SC:ital,wght@0,300;0,800;1,500&family=Spectral:wght@200;400;500&display=swap');
+
+body {
+  font-family: Spectral;
+  font-size: 20px;
+}
+
+.card {
+  font-family: Spectral;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 7px;
+  padding: 8px;
+  line-height: 1.2;
+}
+
+.cloze {
+  font-weight: bold;
+  color: blue;
+}
+.nightMode .cloze {
+  color: lightblue;
+}
+
+.icon-stroke {
+  stroke: black;
+  stroke-width: 35px;
+  stroke-linecap: round;
+}
+
+.card.nightMode {
+  border-color: white;
+}
+
+.nightMode .icon-stroke {
+  stroke: white;
+}
+
+code {
+  font-family: Monaco;
+}
+
+table {
+  width: 100%;
+  border-spacing: 8px;
+}
+
+tr, td {
+  vertical-align: baseline;
+}
+
+.show-hidden .hidden, .nightMode .show-hidden .hidden {
+  background: none;
+}
+
+.show-hidden .hidden .hide {
+  visibility: visible;
+}
+
+.hidden .hide {
+  visibility: hidden;
+}
+
+.hidden {
+  background: black;
+}
+
+.nightMode .hidden {
+  background: white;
+}
+
+th {
+  padding-bottom: 8px;
+  border-bottom: solid 2px black;
+}
+
+.title {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.nightMode th {
+  border-color: white;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.small-caps {
+  font-feature-settings: 'frac' 1;
+  font-family: "Spectral SC";
+  font-variant: small-caps;
+}
+
+.i {
+  font-style: italic;
+}
+
+.tdleft {
+  min-width: 4.5em;
+  width: 20%;
+  max-width: 12em;
+  text-align: right;
+  font-weight: lighter;
+}
+
+.tdright {
+  text-align: left;
+}
+
+.icon {
+  margin-top: 8px;
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+
+.nightMode .icon {
+  background-color: white;
+}
