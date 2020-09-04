@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,900&family=Spectral+SC:ital,wght@0,300;0,800;1,500&family=Spectral:wght@200;400;500&display=swap');
 
 body {
+  hyphens: auto;
   font-family: Spectral;
   font-size: 20px;
 }
@@ -17,34 +18,28 @@ body {
   line-height: 1.2;
 }
 
-.cloze {
-  font-weight: bold;
-  color: blue;
-}
-.nightMode .cloze {
-  color: lightblue;
-}
-
-.icon-stroke {
-  stroke: black;
-  stroke-width: 35px;
-  stroke-linecap: round;
-}
-
 .card.nightMode {
   border-color: white;
 }
 
-.nightMode .icon-stroke {
-  stroke: white;
+.cloze {
+  font-weight: bold;
+  color: blue;
+}
+
+.nightMode .cloze {
+  color: lightblue;
 }
 
 code {
   font-family: Monaco;
 }
 
+/* TABLE*/
+
 table {
   width: 100%;
+  table-layout: fixed;
   border-spacing: 8px;
 }
 
@@ -52,15 +47,17 @@ tr, td {
   vertical-align: baseline;
 }
 
+/* OCCLUSION*/
+
 .show-hidden .hidden, .nightMode .show-hidden .hidden {
   background: none;
 }
 
-.show-hidden .hidden .hide {
+.show-hidden .hidden * {
   visibility: visible;
 }
 
-.hidden .hide {
+.hidden * {
   visibility: hidden;
 }
 
@@ -72,18 +69,22 @@ tr, td {
   background: white;
 }
 
+/* TABLE HEADER*/
+
 th {
   padding-bottom: 8px;
   border-bottom: solid 2px black;
 }
 
+.nightMode th {
+  border-color: white;
+}
+
+/* STYLES*/
+
 .title {
   font-size: 24px;
   text-transform: uppercase;
-}
-
-.nightMode th {
-  border-color: white;
 }
 
 .uppercase {
@@ -100,10 +101,10 @@ th {
   font-style: italic;
 }
 
+/* TABLE COLUMNS*/
+
 .tdleft {
-  min-width: 4.5em;
-  width: 20%;
-  max-width: 12em;
+  width: 3em;
   text-align: right;
   font-weight: lighter;
 }
@@ -111,6 +112,14 @@ th {
 .tdright {
   text-align: left;
 }
+
+/* SPECIAL FIELDS*/
+
+.image > img {
+  height: 256px;
+}
+
+/* ICON*/
 
 .icon {
   margin-top: 8px;
@@ -124,3 +133,14 @@ th {
 .nightMode .icon {
   background-color: white;
 }
+
+.icon-stroke {
+  stroke: black;
+  stroke-width: 35px;
+  stroke-linecap: round;
+}
+
+.nightMode .icon-stroke {
+  stroke: white;
+}
+
