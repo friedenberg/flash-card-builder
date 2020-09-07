@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,900&family=Spectral+SC:ital,wght@0,300;0,800;1,500&family=Spectral:wght@200;400;500&display=swap');
+@import url("_fonts.css");
 
 body {
   hyphens: auto;
@@ -32,7 +32,7 @@ body {
 }
 
 .code {
-  font-family: Monaco;
+  font-family: 'Fira Code';
   white-space: pre-wrap;
   hyphens: none;
 }
@@ -95,8 +95,9 @@ th {
 
 .small-caps {
   font-feature-settings: 'frac' 1;
-  font-family: "Spectral SC";
   font-variant: small-caps;
+  font-family: 'Spectral SC';
+  font-variant-caps: all-small-caps;
 }
 
 .i {

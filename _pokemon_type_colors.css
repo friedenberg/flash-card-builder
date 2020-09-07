@@ -7,7 +7,7 @@
   font-weight: 400;
   white-space: nowrap;
   font-family: Monaco;
-  text-transform: small-caps;
+  font-variant: small-caps;
   display: none;
   font-size: 12pt;
 }

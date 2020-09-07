@@ -7,15 +7,16 @@ define(
       function FieldBasic(name, value, rightClazz, leftClazz) {
         this.name = name;
         this.value = value;
-        this.leftClazz = `${leftClazz} tdleft`;
-        this.rightClazz = `${rightClazz} tdright`;
+        this.leftClazz = leftClazz;
+        this.rightClazz = rightClazz;
       }
 
       FieldBasic.prototype.shouldIgnore = function() {
         return this.value.length == 0;
       };
 
-      FieldBasic.prototype.build = function(row) {
+      FieldBasic.prototype.build = function(table) {
+        let row = table.insertRow(-1);
         row.appendChild(this.buildLeft());
         row.appendChild(this.buildRight());
       };

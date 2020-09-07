@@ -26,7 +26,8 @@ define(
         return false;
       };
 
-      FieldKeys.prototype.build = function(row) {
+      FieldKeys.prototype.build = function(table) {
+        let row = table.insertRow(-1);
         row.appendChild(this.buildLeft());
         row.appendChild(this.buildRight());
       };
