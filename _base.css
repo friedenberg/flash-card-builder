@@ -31,8 +31,10 @@ body {
   color: lightblue;
 }
 
-code {
+.code {
   font-family: Monaco;
+  white-space: pre-wrap;
+  hyphens: none;
 }
 
 /* TABLE*/
