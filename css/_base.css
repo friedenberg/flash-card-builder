@@ -37,6 +37,26 @@ body {
   hyphens: none;
 }
 
+.keys {
+  display: inline-block;
+  padding: 0 .5em;
+  margin: 0 .1em;
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 20px;
+  vertical-align: 1px;
+  color: #fff;
+  background: rgba(48,51,54,.85);
+  border-radius: .3em;
+}
+
+.nightMode .keys  {
+  background: white;
+  color: rgba(48,51,54,.85);
+}
+
 /* TABLE*/
 
 table {

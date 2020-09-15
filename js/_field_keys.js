@@ -4,6 +4,25 @@ define(
       '_util',
     ],
     function(Util) {
+      const labelsToSymbols = {
+        backspace: "⌫ Del",
+        command: "⌘ Cmd",
+        control: "⌃ Ctrl",
+        delete: "⌦ Del",
+        down_arrow: "↓ Down",
+        enter: "⌤ Ent",
+        left_arrow: "← Left",
+        option: "⌥ Opt",
+        return: "⏎ Ret",
+        right_arrow: "→ Right",
+        shift: "⇧ Shift",
+        space: "⎵ Space",
+        up_arrow: "↑ Up",
+        vertical_arrow: "↕ Up / Down",
+        horizontal_arrow: "↔ Left / Right",
+        escape: "⎋ Esc",
+      };
+
       function FieldKeys(name, modifiers, keys, leftClazz = '', rightClazz =
       '') {
         this.name = name;
@@ -37,17 +56,16 @@ define(
       };
 
       FieldKeys.prototype.buildRight = function() {
-        const modifiers = this.modifiers.map(
-            function(m) {
-              return '<span class="keys">' + m + '</span>';
-            },
-        );
+        const makeSpan = function(m) {
+          if (labelsToSymbols.hasOwnProperty(m)) {
+            m = labelsToSymbols[m];
+          }
 
-        const keys = this.keys.map(
-            function(k) {
-              return '<span class="keys">' + k + '</span>';
-            },
-        );
+          return '<span class="keys">' + m + '</span>';
+        };
+
+        const modifiers = this.modifiers.map(makeSpan);
+        const keys = this.keys.map(makeSpan);
 
         const text = modifiers.concat(keys).join('<span>+</span>');
 

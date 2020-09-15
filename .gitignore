@@ -1,3 +1,10 @@
 *.jpg
 *.png
+*.css
+*.js
+*.woff2
+!images/*
+!css/*
+!fonts/*
+!js/*
 node_modules/
