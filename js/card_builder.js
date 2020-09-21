@@ -5,8 +5,9 @@ define(
       '_field_basic',
       '_field_image',
       '_field_keys',
+      '_field_math',
     ],
-    function(Util, FieldBasic, FieldImage, FieldKeys) {
+    function(Util, FieldBasic, FieldImage, FieldKeys, FieldMath) {
       function CardBuilder() {
         this.title = null;
         this.title_clazz = null;
@@ -94,6 +95,17 @@ define(
               this.fields.push(
                   new FieldKeys(
                       label, content, leftClazz, rightClazz,
+                  ),
+              );
+              break;
+
+            case 'm':
+              this.fields.push(
+                  new FieldMath(
+                      label,
+                      content,
+                      `${leftClazz} tdleft small-caps`,
+                      `${rightClazz} tdright`,
                   ),
               );
               break;
