@@ -4,8 +4,8 @@
     "eslint-config-google": "^0.14.0"
   },
   "scripts": {
-    "lint-js": "find . -iname '*.js' -a ! -ipath './node_modules/**' -a ! -ipath './_require.js' | xargs npx eslint --fix",
-    "lint-css": "css-validator --profile css3svg *.css"
+    "lint-js": "find js/ -iname '*.js' -a ! -ipath '*require.js' | xargs npx eslint --fix",
+    "lint-css": "css-validator --profile css3svg css/*.css"
   },
   "dependencies": {
     "css-validator": "^0.9.0"

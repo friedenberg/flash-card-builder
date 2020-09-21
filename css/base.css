@@ -71,23 +71,26 @@ tr, td {
 
 /* OCCLUSION*/
 
-.show-hidden .hidden, .nightMode .show-hidden .hidden {
+.sh .h,
+.nightMode .sh .h,
+.show-hidden .h,
+.nightMode .show-hidden .h {
   background: none;
 }
 
-.show-hidden .hidden * {
+.show-hidden .h * {
   visibility: visible;
 }
 
-.hidden * {
+.h * {
   visibility: hidden;
 }
 
-.hidden {
+.h {
   background: black;
 }
 
-.nightMode .hidden {
+.nightMode .h {
   background: white;
 }
 

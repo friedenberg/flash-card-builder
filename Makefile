@@ -4,27 +4,28 @@ FILES_JS := $(wildcard js/*.js)
 FILES_CSS := $(wildcard css/*.css)
 FILES_FONTS := $(wildcard fonts/*.woff2)
 
-FILES_ALL := $(FILES_IMAGES) $(FILES_JS) $(FILES_CSS) $(FILES_FONTS)
+FILES_PREFIX := $(notdir $(FILES_JS) $(FILES_CSS) $(FILES_FONTS))
+FILES_NO_PREFIX := $(notdir $(FILES_IMAGES))
 
 .PHONY: all
-all: $(notdir $(FILES_ALL));
+all: $(addprefix _,$(FILES_PREFIX)) $(FILES_NO_PREFIX);
 
-%.css: css/%.css
-	cp $< $@
+_%.css: css/%.css
+	cp '$<' '$@'
 
-%.js: js/%.js
-	cp $< $@
+_%.js: js/%.js
+	cp '$<' '$@'
 
-%.woff2: fonts/%.woff2
-	cp $< $@
+_%.woff2: fonts/%.woff2
+	cp '$<' '$@'
 
 %.jpg: images/%.jpg
-	cp $< $@
+	cp '$<' '$@'
 
 %.png: images/%.png
-	cp $< $@
+	cp '$<' '$@'
 
-.PHONY:
+.PHONY: clean
 clean:
 	find . -maxdepth 1 -type f \
 		\( \

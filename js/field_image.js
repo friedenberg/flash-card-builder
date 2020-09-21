@@ -16,21 +16,24 @@ define(
 
       FieldImage.prototype.build = function(table) {
         if (this.caption.length > 0) {
-          let tdCaption = Util.makeElement("td");
+          const tdCaption = Util.makeElement('td');
           tdCaption.colSpan = 2;
-          tdCaption.appendChild(Util.makeElement('div', 'caption i', this.caption));
+          tdCaption.appendChild(Util.makeElement('div', 'caption i',
+              this.caption));
 
-          let rowCaption = table.insertRow(-1);
+          const rowCaption = table.insertRow(-1);
           rowCaption.appendChild(tdCaption);
         }
 
-        let row = table.insertRow(-1);
-        let tdImage = Util.makeElement("td");
+        const row = table.insertRow(-1);
+        const tdImage = Util.makeElement('td');
         tdImage.colSpan = 2;
-        tdImage.appendChild(Util.makeElement('div', `image ${this.imageClazz}`, this.image));
+        tdImage.appendChild(Util.makeElement('div', `image ${this.imageClazz}`,
+            this.image));
 
         row.appendChild(tdImage);
       };
 
       return FieldImage;
-    });
+    },
+);

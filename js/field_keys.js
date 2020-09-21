@@ -5,33 +5,28 @@ define(
     ],
     function(Util) {
       const labelsToSymbols = {
-        backspace: "⌫ Del",
-        command: "⌘ Cmd",
-        control: "⌃ Ctrl",
-        delete: "⌦ Del",
-        down_arrow: "↓ Down",
-        enter: "⌤ Ent",
-        left_arrow: "← Left",
-        option: "⌥ Opt",
-        return: "⏎ Ret",
-        right_arrow: "→ Right",
-        shift: "⇧ Shift",
-        space: "⎵ Space",
-        up_arrow: "↑ Up",
-        vertical_arrow: "↕ Up / Down",
-        horizontal_arrow: "↔ Left / Right",
-        escape: "⎋ Esc",
+        backspace: '⌫ Del',
+        command: '⌘ Cmd',
+        control: '⌃ Ctrl',
+        delete: '⌦ Del',
+        down_arrow: '↓ Down',
+        enter: '⌤ Ent',
+        left_arrow: '← Left',
+        option: '⌥ Opt',
+        return: '⏎ Ret',
+        right_arrow: '→ Right',
+        shift: '⇧ Shift',
+        space: '⎵ Space',
+        up_arrow: '↑ Up',
+        vertical_arrow: '↕ Up / Down',
+        horizontal_arrow: '↔ Left / Right',
+        escape: '⎋ Esc',
       };
 
-      function FieldKeys(name, modifiers, keys, leftClazz = '', rightClazz =
+      function FieldKeys(name, keys, leftClazz = '', rightClazz =
       '') {
         this.name = name;
-        this.modifiers = [];
         this.keys = [];
-
-        if (modifiers.length > 0) {
-          this.modifiers = modifiers.split(' ');
-        }
 
         if (keys.length > 0) {
           this.keys = keys.split(' ');
@@ -46,7 +41,7 @@ define(
       };
 
       FieldKeys.prototype.build = function(table) {
-        let row = table.insertRow(-1);
+        const row = table.insertRow(-1);
         row.appendChild(this.buildLeft());
         row.appendChild(this.buildRight());
       };
@@ -64,13 +59,12 @@ define(
           return '<span class="keys">' + m + '</span>';
         };
 
-        const modifiers = this.modifiers.map(makeSpan);
         const keys = this.keys.map(makeSpan);
-
-        const text = modifiers.concat(keys).join('<span>+</span>');
+        const text = keys.join('<span>+</span>');
 
         return Util.makeElement('td', 'tdright ' + this.rightClazz, text);
       };
 
       return FieldKeys;
-    });
+    },
+);

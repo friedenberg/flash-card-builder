@@ -16,7 +16,7 @@ define(
       };
 
       FieldBasic.prototype.build = function(table) {
-        let row = table.insertRow(-1);
+        const row = table.insertRow(-1);
         row.appendChild(this.buildLeft());
         row.appendChild(this.buildRight());
       };
@@ -30,4 +30,5 @@ define(
       };
 
       return FieldBasic;
-    });
+    },
+);
