@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "css-validator": "^0.9.0",
     "eslint": "^7.8.1",
     "eslint-config-google": "^0.14.0"
   },
@@ -8,6 +9,5 @@
     "lint-css": "css-validator --profile css3svg css/*.css"
   },
   "dependencies": {
-    "css-validator": "^0.9.0"
   }
 }
