@@ -11,6 +11,15 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "require-jsdoc": 0
+        "require-jsdoc": 0,
+        "new-cap": ["error", { "capIsNewExceptionPattern": "MathJax" }],
+        "max-len": [
+          "error",
+          {
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true
+          }
+        ]
     }
 }
